@@ -1,0 +1,28 @@
+.1 השתמש ב JOIN כדי להציג את כל הקורסים שיש להם מרצה, ואת המרצה של הקורס.
+INNER JOIN :רמז
+
+SELECT Lecturers.*, Courses.name FROM Courses
+INNER JOIN Lecturers ON Courses.lecturer_id = Lecturers.lecturer_id
+
+.2 השתמש ב JOIN כדי להציג את כל הקורסים שיש להם מרצה + קורסים שאין להם מרצה, ואת
+המרצה של הקורס )במידה ויש(. רמז: INCLUSIVE
+.3 השתמש ב JOIN כדי להציג את כל המרצים המשובצים
+
+SELECT Courses.*,Courses.name AS Courses_name, Lecturers.name AS Lecturer_name FROM Courses
+LEFT JOIN Lecturers ON Courses.lecturer_id = Lecturers.lecturer_id  
+
+.3 השתמש ב JOIN כדי להציג את כל המרצים המשובצים לקורס + מרצים שעדיין לא משובצים,
+ואת הפרטים של הקורס . רמז: INCLUSIVE
+
+SELECT Lecturers.*,Courses.name AS Courses_name, Lecturers.name AS Lecturer_name FROM Courses
+LEFT JOIN Lecturers ON Courses.lecturer_id = Lecturers.lecturer_id  
+
+.8 הדפס את כל המרצים שיש בשם שלהם את האות- i
+
+SELECT *
+FROM Lecturers
+WHERE name LIKE '%i%';
+
+.9 ספור כמה מרצים יש
+SELECT COUNT(*) AS lecturers_count
+FROM Lecturers;
