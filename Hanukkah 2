@@ -1,0 +1,27 @@
+.15. השתמש ב JOIN כדי להציג את כל העובדים, ואת פרטי המחלקה אליה הם שייכים .
+INNER JOIN :רמז
+תשובה:
+select Departments.*, Employees.name AS Employee_name from Departments
+inner join Employees ON Employees.department_id = Departments.department_id
+
+.16 השתמש ב JOIN כדי להציג את כל העובדים שיש להם מחלקה + עובדים שאין להם מחלקה ,
+ואת המחלקה של העובד )במידה ויש(. רמז: INCLUSIVE
+תשובה:
+select Departments.*, Employees.name AS Employee_name from Departments
+LEFT join Employees ON Employees.department_id = Departments.department_id
+
+.19 מצא את המשכורת הממוצעת של כל עובד
+תשובה:
+SELECT AVG(salary) AS avg_salary
+FROM Employees;
+
+.22 מצא מה המשכורת הממוצעת לכל רמת seniority
+תשובה:
+SELECT seniority, AVG(salary) AS average_salary
+FROM Employees
+GROUP BY seniority
+
+ספור כמה עובדים יש
+תשובה:
+SELECT COUNT(*) AS Employees_count
+FROM Employees;
